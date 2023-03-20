@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentExampleProject"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
         <activity
             android:name=".SecondActivity"
             android:exported="false" />

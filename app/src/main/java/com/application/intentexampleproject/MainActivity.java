@@ -34,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
 //                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.deakin.edu.au"));
 //                startActivity(intent);
 
+                Intent secondActivityIntent = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(secondActivityIntent);
 
-                Uri number = Uri.parse("tel:5551234");
-                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
-                startActivity(callIntent);
+
+//                Uri number = Uri.parse("tel:5551234");
+//                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+//                startActivity(callIntent);
 //                startActivityForResult(callIntent, 1);
             }
         });
@@ -52,11 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
                 myIntent.putExtra("key", "Answer Selected");
                 myIntent.putExtra("total_mark", "Total Mark");
+                //TODO STep 2 Start Activity For Result
                 startActivityForResult(myIntent,1);
             }
         });
     }
 
+
+    //Todo STep 3 onActivityResult
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
